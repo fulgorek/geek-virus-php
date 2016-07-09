@@ -34,9 +34,8 @@ function get($url){
   return $result;
 }
 
-function is_infected($p){
-  $str = get($p);
-  $dna = count_chars($str, 1);
+function is_infected($patient){
+  $dna = count_chars(get($patient), 1);
   return array_search(max($dna), $dna) === 84;
 }
 
